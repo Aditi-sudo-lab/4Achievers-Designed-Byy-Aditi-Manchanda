@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>4Achievers - Professional Landing Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+
+
+  <style>
+    :root {
+      --brand: #0d6efd;
+      --dark: #0b1220;
+      --muted: #6c757d;
+    }
+
+    body { 
+     font-family: "Segoe UI", Roboto, Arial, sans-serif; 
+    }
+
+    /* ==== Navbar ==== */
+    .navbar-brand {
+     font-weight: 700; 
+    }
+   .button {
+     margin: 0;
+     height: auto;
+     background: transparent;
+     padding: 0;
+     border: none;
+     cursor: pointer;
+    }
+   
+   .button {
+     --border-right: 6px;
+     --text-stroke-color: rgba(1, 119, 253, 0.6);
+     --animation-color: rgb(0, 8, 255);
+     --fs-size: 2em;
+     letter-spacing: 3px;
+     text-decoration: none;
+     font-size: var(--fs-size);
+     font-family: "Arial";
+     position: relative;
+     text-transform: uppercase;
+     color: transparent;
+     -webkit-text-stroke: 1px var(--text-stroke-color);
+    }
+   /* this is the text, when you hover on button */
+   .hover-text {
+     position: absolute;
+     box-sizing: border-box;
+     content: attr(data-text);
+     color: var(--animation-color);
+     width: 0%;
+     inset: 0;
+     border-right: var(--border-right) solid var(--animation-color);
+     overflow: hidden;
+     transition: 0.5s;
+     -webkit-text-stroke: 1px var(--animation-color);
+   }
+   /* hover */
+   .button:hover .hover-text {
+     width: 100%;
+     filter: drop-shadow(0 0 23px var(--animation-color))
+   }
+
+    /* ==== Hero Section === */
+    .hero {
+     /* background: linear-gradient(120deg, var(--brand), #007bff); */
+     background: white;
+     color: black; 
+     padding: 5rem 0;
+    }
+    .hero h1 { 
+      font-weight: 700; 
+    }
+
+    /* ==== Course ==== */
+    /* Basic Styling */
+    .top-trending-courses {
+      padding: 50px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    
+    .top-trending-courses h2 {
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+    
+    .courses-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .course-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .course-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .course-card h3 {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    
+    .course-card p {
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    
+    .course-card button {
+      padding: 10px 20px;
+      background: #007bff;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .course-card button:hover {
+      background: #0056b3;
+    }
+
+    /* Testimonial */
+    .testimonial {
+     background: #fff; 
+     border: 3px solid #0d6efd; /* Blue border */
+     padding: 1rem; 
+     border-radius: .5rem; 
+     height: 100%;
+     transition: transform 0.3s, box-shadow 0.3s;
+    }
+   
+   .testimonial:nth-child(even) {
+     border-color: #ffffff; /* White border for even cards */
+     background: #0d6efd;   /* Optional: invert background for contrast */
+     color: #fff;           /* Adjust text color if background is blue */
+    }
+   
+   .testimonial:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* Clients / Partners */
+    .clients {
+     padding: 20px;
+    }
+    .clients .logos {
+     display: grid;
+     grid-template-columns: repeat(6, 1fr); 
+     gap: 24px;
+     margin-top: 30px;
+     align-items: center;
+     justify-items: center;
+    }
+    .clients .logo-card {
+     background: #fff;
+     border: 2px solid #eee;
+     border-radius: 12px;
+     padding: 18px;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .clients .logo-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      background: linear-gradient(135deg, #e6f3ff, #fff4cc);
+    }
+    
+    .clients .logo-card img {
+      max-width: 190px;
+      height: auto;
+    }
+     .partners-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+    
+    .partners-logos .logo-card {
+      flex: 0 1 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  /* =======================
+     FOOTER
+    ======================= */
+    .footer-new {
+     background: black;
+     color: white;
+     padding: 40px 20px 20px;
+     font-size: 20px;
+    }
+   .footer-new .footer-top {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     gap: 40px;
+    }
+   .footer-new .footer-left {
+     flex: 1;
+     max-width: 500px;
+    }
+   .footer-new .footer-logo {
+     max-height: 50px;
+     margin-bottom: 12px;
+    }
+   .footer-new .footer-right-img img {
+     max-width: 500px;
+     width: 100%;
+     border-radius: 12px;
+    }
+   .footer-new .foot-links {
+     list-style: none;
+     padding: 0;
+     margin: 10px 0 0;
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+    }
+   .footer-new .foot-links a {
+     color: whitesmoke;
+     font-weight: 500;
+     transition: color .2s;
+    }
+   .footer-new .foot-links a:hover {
+     color: none;
+    }
+   .footer-new .footer-bottom {
+     margin-top: 30px;
+     border-top: 1px solid rgba(255, 250, 250, 0.856);
+     padding-top: 12px;
+     text-align: center;
+     font-size: 13px;
+     color: #ccc;
+    }
+    ul {
+     list-style: none;
+    }
+    
+    .example-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .example-2 .icon-content {
+      margin: 0 10px;
+      position: relative;
+    }
+    .example-2 .icon-content .tooltip {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      opacity: 0;
+      visibility: hidden;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .example-2 .icon-content:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+      top: -50px;
+    }
+    .example-2 .icon-content a {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: #4d4d4d;
+      background-color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+    .example-2 .icon-content a:hover {
+      box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+    }
+    .example-2 .icon-content a svg {
+      position: relative;
+      z-index: 1;
+      width: 30px;
+      height: 30px;
+    }
+    .example-2 .icon-content a:hover {
+      color: white;
+    }
+    .example-2 .icon-content a .filled {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #000;
+      transition: all 0.3s ease-in-out;
+    }
+    .example-2 .icon-content a:hover .filled {
+      height: 100%;
+    }
+    
+    .example-2 .icon-content a[data-social="linkedin"] .filled,
+    .example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+      background-color: #0274b3;
+    }
+    
+    .example-2 .icon-content a[data-social="github"] .filled,
+    .example-2 .icon-content a[data-social="github"] ~ .tooltip {
+      background-color: #24262a;
+    }
+    .example-2 .icon-content a[data-social="instagram"] .filled,
+    .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+      background: linear-gradient(
+        45deg,
+        #405de6,
+        #5b51db,
+        #b33ab4,
+        #c135b4,
+        #e1306c,
+        #fd1f1f
+      );
+    }
+    .example-2 .icon-content a[data-social="youtube"] .filled,
+    .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+      background-color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">4Achievers</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#courses" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="#placement" class="nav-link">Placement</a></li>
+          <li class="nav-item"><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="#contact" class="btn btn-primary ms-lg-2">Enquire Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero text-center text-lg-start">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-5">Unlock Unlimited Live Classes for Your Workforce</h1>
+          <p class="lead">Empower your team with our comprehensive learning platform designed for modern enterprises.</p>
+          <!-- <a href="#courses" class="btn btn-light btn-lg me-2">Get Started</a> -->
+          <button class="button" data-text="Awesome">
+            <span class="actual-text">&nbsp;GetStarted&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;GetStarted&nbsp;</span>
+         </button>
+        </div>
+        <div class="col-lg-6 text-center mt-4 mt-lg-0">
+          <img src="https://www.simplilearn.com/ice9/banners/newIN3.jpg" class="img-fluid rounded" alt="Hero">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Trending Courses Section -->
+  <section class="top-trending-courses bg-white">
+    <h2>Top Trending Courses</h2>
+    <div class="courses-container">
+      <div class="course-card" style="width: 300px;">
+        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Course 1" style="height: 200px;">
+        <h3>The Complete Web Developer Bootcamp</h3>
+        <p>
+         Time: 62 hrs <br> Students: 15,340
+        </p> <br><br>
+        <button
+          class="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-md group"
+         >
+          <span
+            class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-mr-4 group-hover:-mt-4"
+          >
+            <span
+              class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+            ></span>
+          </span>
+          <span
+            class="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-ml-4 group-hover:-mb-4"
+          >
+            <span
+              class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+            ></span>
+          </span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"
+          ></span>
+          <span
+            class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white"
+            >Details</span
+          >
+        </button>      
+      </div>
+      <div class="course-card" style="width: 300px;">
+        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Course 2" style="height: 200px;">
+        <h3>Python for Data Science & Machine Learning</h3>
+        <p>
+         Time: 56 hrs <br> Student: 23,100
+        </p> <br> <br>
+        <button
+            class="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-md group"
+           >
+            <span
+              class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-mr-4 group-hover:-mt-4"
+            >
+              <span
+                class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+              ></span>
+            </span>
+            <span
+              class="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-ml-4 group-hover:-mb-4"
+            >
+              <span
+                class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+              ></span>
+            </span>
+            <span
+              class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"
+            ></span>
+            <span
+              class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white"
+              >Details</span
+            >
+          </button>      '
+      </div>
+      <div class="course-card" style="width: 300px;">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Course 3" style="height: 200px;">
+        <h3>The Complete Digital Marketing Course- 12 courses in 1</h3>
+        <p>
+         Time: 48 hrs <br> Student: 42,850
+        </p> <br>
+        <button
+          class="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-md group"
+         >
+          <span
+            class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-mr-4 group-hover:-mt-4"
+          >
+            <span
+              class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+            ></span>
+          </span>
+          <span
+            class="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-ml-4 group-hover:-mb-4"
+          >
+            <span
+              class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+            ></span>
+          </span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"
+          ></span>
+          <span
+            class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white"
+            >Details</span
+          >
+        </button>
+      </div>
+      <div class="course-card" style="width: 300px; height: 500px;">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Course 4" style="height: 200px;">
+        <h3>Machine Learning A-Z: Hands on python and R in Data Science</h3>
+        <p>
+         Time: 44 hrs <br> Students: 18,750
+        </p> <br>
+        <button
+          class="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-md group"
+         >
+          <span
+            class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-mr-4 group-hover:-mt-4"
+          >
+            <span
+              class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+            ></span>
+          </span>
+          <span
+            class="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-indigo-700 rounded group-hover:-ml-4 group-hover:-mb-4"
+          >
+            <span
+              class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"
+            ></span>
+          </span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"
+          ></span>
+          <span
+            class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white"
+            >Details</span
+          >
+        </button>
+      </div>
+    </div> <br>
+      <button class="bg-cyan-950 text-cyan-400 border border-cyan-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+       <span class="bg-cyan-400 shadow-cyan-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+       View all Courses  <i class="fa-solid fa-arrow-right"></i>
+     </button>
+  </section>
+
+
+ <!-- TESTIMONIALS -->
+  <section class="text-gray-400 bg-white body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-black">What Our Students Says</h1>
+    </div>
+      <div class="flex flex-wrap -m-4">
+        <!-- Testimonial 1 -->
+        <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+          <div class="h-full text-center border-4 border-blue-500 rounded-lg p-6">
+            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-blue-500" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80">
+            <p class="leading-relaxed text-black">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo provident dolore qui, distinctio, nihil ipsum porro asperiores et 
+              molestiae in praesentium incidunt earum cum dolor, sequi repudiandae cumque laudantium quae?
+            </p>
+            <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4"></span>
+            <h2 class="text-black font-medium title-font tracking-wider text-sm">Priya Rawat</h2>
+            <p class="text-gray-800">Senior Product Designer</p>
+          </div>
+        </div>
+  
+        <!-- Testimonial 2 -->
+        <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+          <div class="h-full text-center border-4 border-blue-500 rounded-lg p-6">
+            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-blue-500" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+            <p class="leading-relaxed text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo provident dolore qui, distinctio, nihil ipsum porro asperiores et 
+              molestiae in praesentium incidunt earum cum dolor, sequi repudiandae cumque laudantium quae?</p>
+            <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4"></span>
+            <h2 class="text-black font-medium title-font tracking-wider text-sm">Himanshu Dubey</h2>
+            <p class="text-gray-800">UI Developer</p>
+          </div>
+        </div>
+  
+        <!-- Testimonial 3 -->
+        <div class="lg:w-1/3 lg:mb-0 p-4">
+          <div class="h-full text-center border-4 border-blue-500 rounded-lg p-6">
+            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-blue-500" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80">
+            <p class="leading-relaxed text-black">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo provident dolore qui, distinctio, nihil ipsum porro asperiores et 
+              molestiae in praesentium incidunt earum cum dolor, sequi repudiandae cumque laudantium quae?
+            </p>
+            <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4"></span>
+            <h2 class="text-black font-medium title-font tracking-wider text-sm">Aisha Chauhan</h2>
+            <p class="text-gray-800">CTO</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PLACEMENT -->
+  <section class="bg-white py-16">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our 7-Step Replacement Process</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+        A streamlined approach to ensure your career success.. So let's achieve greatness together!!
+      </p>
+    </div>
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+    
+    <!-- Left Steps -->
+    <div class="lg:w-1/2 md:w-1/2 md:pr-10 md:py-6">
+      <!-- Step 1 -->
+      <div class="flex relative pb-12">
+        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+          <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+        </div>
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+          <span class="font-bold">1</span>
+        </div>
+        <div class="flex-grow pl-4">
+          <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Course Program</h2>
+          <p class="leading-relaxed">
+            Our program evaluates well-being your time into hand around for yourself with comprehensive curriculum designed by industry experts to ensure you
+            gain the most relevant skills.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex relative pb-12">
+        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+          <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+        </div>
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+          <span class="font-bold">2</span>
+        </div>
+        <div class="flex-grow pl-4">
+          <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Expert Members</h2>
+          <p class="leading-relaxed">
+            All our integrity informs us are working professionally and how you're at training experience with industry experts who bring real-world knowledge 
+            to the classroom.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex relative pb-12">
+        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+          <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+        </div>
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+          <span class="font-bold">3</span>
+        </div>
+        <div class="flex-grow pl-4">
+          <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Project Prepration</h2>
+          <p class="leading-relaxed">
+            All the programs of Campus come with real-world projects to enhance your practical skills and build a portfolio that showcases your 
+            capabilities to potential employers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex relative pb-12">
+        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+          <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+        </div>
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+          <span class="font-bold">4</span>
+        </div>
+        <div class="flex-grow pl-4">
+          <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Assignment Process</h2>
+          <p class="leading-relaxed">
+            Apart from the project, all our training programs include tens of assignments for comprehensive learning and skill reinforcement throughout your journey.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="flex relative pb-12">
+        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+          <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+        </div>
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+          <span class="font-bold">5</span>
+        </div>
+        <div class="flex-grow pl-4">
+          <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Gromming Session</h2>
+          <p class="leading-relaxed">
+           We will help you prepare yourself for job interviews through professional grooming sessions that cover communication skills, presentation, and interview techniques.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="flex relative">
+        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+          <span class="font-bold">6</span>
+        </div>
+        <div class="flex-grow pl-4">
+          <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Interview Calls</h2>
+          <p class="leading-relaxed">
+            Our placement team ensures you get interview calls from all possible opportunities after training, connecting you with our network of hiring partners.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Image Sticky -->
+    <div class="lg:w-1/2 md:w-1/2 flex justify-center items-start">
+      <img src="https://www.cromacampus.com/public/uploads/images/certificate1.png" 
+           alt="Placements" 
+           class="rounded-lg shadow-lg sticky top-24 w-full h-auto max-h-[800px] object-cover" />
+    </div>
+
+  </div>
+</section>
+
+<!-- ==== Stats / Counters ==== -->
+<section class="text-gray-600 body-font bg-white">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Growth and Reach</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+        We are proud of our journey and the milestones we've achieved together. Here are some key statistics that highlight our growth and impact in the industry.
+        when you choose us, you're not just getting a service; you're joining a community dedicated to excellence and success. So let's achieve greatness together!!
+      </p>
+    </div>
+    <div class="flex flex-wrap -m-4 text-center">
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full bg-white">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg bg-blue-400">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-white w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+            <path d="M8 17l4 4 4-4m-4-5v9"></path>
+            <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
+          </svg>
+          <h2 class="title-font font-medium text-3xl text-black">8+</h2>
+          <p class="leading-relaxed text-black">Learners</p>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full bg-white">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg bg-blue-400">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-white w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+          </svg>
+          <h2 class="title-font font-medium text-3xl text-black">500+</h2>
+          <p class="leading-relaxed text-black">Courses</p>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full bg-white">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg bg-blue-400">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-white w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+            <path d="M3 18v-6a9 9 0 0118 0v6"></path>
+            <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
+          </svg>
+          <h2 class="title-font font-medium text-3xl text-black">2+</h2>
+          <p class="leading-relaxed text-black">Instructors</p>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:w-1/2 w-full bg-white">
+        <div class="border-2 border-gray-200 px-4 py-6 rounded-lg bg-blue-400">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-white w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <h2 class="title-font font-medium text-3xl text-black">14+</h2>
+          <p class="leading-relaxed text-black">Locations of Branches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> <br><br>
+
+  <!-- CONTACT SECTION -->
+  <section class="flex flex-col md:flex-row items-stretch justify-center w-[90%] md:w-[80%] mx-auto bg-white rounded-lg shadow-lg overflow-hidden md:gap-x-8 gap-y-6">
+    
+    <!-- 🗺️ Left: Google Map -->
+    <div class="md:w-1/2 w-full h-64 md:h-auto">
+      <iframe 
+       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.1983473379442!2d77.37910311514986!3d28.672160025732612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf08d0f70a0db%3A0x9d6b7ee2360f0f16!2sB-77%2C%2015%20Metro%20Rd%2C%20B%20Block%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1727299999999!5m2!1sen!2sin" 
+       class="w-full h-full border-2"
+       allowfullscreen=""
+       loading="lazy"
+       referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <!-- 📝 Right: Contact Form -->
+    <div class="md:w-1/2 w-full p-8 relative overflow-hidden border-2 border-blue-800 z-10 bg-white rounded-lg shadow-md 
+        before:w-24 before:h-24 before:absolute before:bg-blue-500 before:rounded-full before:-z-10 before:blur-3xl 
+        after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-3xl after:top-24 after:-right-12">
+      
+      <h2 class="text-2xl text-sky-900 font-bold mb-6">Update Your Profile</h2>
+  
+      <form id="profileForm" method="post" action="#">
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-600" for="name">Full Name</label>
+          <input id="name" name="name" class="mt-1 p-2 w-full border-2 border-black rounded-md text-black" type="text" />
+        </div>
+  
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-600" for="email">Email Address</label>
+          <input
+            class="mt-1 p-2 w-full border-2 border-black rounded-md text-black"
+            name="email"
+            id="email"
+            type="email"
+          />
+        </div>
+  
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-600" for="phone">Phone Number</label>
+          <input 
+            class="mt-1 p-2 w-full bg-white border-2 border-black rounded-md text-black"
+            type="tel" 
+            name="phone" 
+            id="phone"
+            pattern="[0-9]{10}" 
+            maxlength="10" 
+            oninput="this.value = this.value.replace(/[^0-9]/g,'')"
+          />
+        </div>
+  
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-600" for="bio">Bio</label>
+          <textarea
+            class="mt-1 p-2 w-full border-2 border-black rounded-md text-black"
+            rows="3"
+            name="bio"
+            id="bio"
+          ></textarea>
+        </div>
+  
+        <div class="flex justify-end">
+          <button class="button" data-text="Awesome">
+            <span class="actual-text">&nbsp;Submit&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;Submit&nbsp;</span>
+         </button>
+
+        </div>
+  
+        <!-- Message container -->
+        <p id="formMessage" class="mt-3 text-center text-sm font-medium"></p>
+      </form>
+    </div>
+  </section> <br><br>
+
+  <!-- FOOTER -->
+  <footer class="footer-new">
+    <div class="container">
+      <div class="footer-top">
+        
+        <!-- Left Side -->
+        <div class="footer-left">
+          <img src="https://4achievers.com/images/4achievers_logo.png" alt="BORG Desk Logo" class="footer-logo">
+          <h3>Join 4Achievers</h3>
+          <p>
+            Large Student community and stay up to date with the latest job and carrer opportunities
+          </p>
+          <p><i class="fa-solid fa-phone"></i>  +91 01204546100</p>
+          <p><i class="fa-solid fa-envelope"></i>  <a href="mailto:servicedesk@borgerp.com">info@4achievers.com</a></p> <br><br>
+          <ul class="example-2">
+            <li class="icon-content">
+              <a
+                href="https://linkedin.com/"
+                aria-label="LinkedIn"
+                data-social="linkedin"
+              >
+              <div class="filled"></div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-linkedin"
+                viewBox="0 0 16 16"
+                xml:space="preserve">
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                  fill="currentColor"></path>
+              </svg>
+              </a>
+              <div class="tooltip">LinkedIn</div>
+            </li>
+            <li class="icon-content">
+              <a href="https://www.github.com/" aria-label="GitHub" data-social="github">
+                <div class="filled"></div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-github"
+                  viewBox="0 0 16 16"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">GitHub</div>
+            </li>
+            <li class="icon-content">
+              <a
+                href="https://www.instagram.com/"
+                aria-label="Instagram"
+                data-social="instagram"
+              >
+                <div class="filled"></div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-instagram"
+                  viewBox="0 0 16 16"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Instagram</div>
+            </li>
+            <li class="icon-content">
+              <a href="https://youtube.com/" aria-label="Youtube" data-social="youtube">
+                <div class="filled"></div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-youtube"
+                  viewBox="0 0 16 16"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Youtube</div>
+            </li>
+          </ul>
+        </div>
+        <!-- Right Side -->
+        <div class="col-6 col-md-2">
+          <h6 class="footer-heading">Company</h6>
+          <ul class="list-unstyled small lh-lg cursor-pointer">
+            <li>About Us</li>
+            <li>Careers</li>
+            <li>Newsroom</li>
+            <li>Alumni Speak</li>
+            <li>Grievance Redressal</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6 class="footer-heading">Discover</h6>
+          <ul class="list-unstyled small lh-lg cursor-pointer">
+            <li>Free Courses</li>
+            <li>Skillup Sitemap</li>
+            <li>Resources</li>
+            <li>RSS Feed</li>
+            <li>SimpliMentor GPT</li>
+          </ul>
+        </div>
+  
+      </div>
+      <div class="footer-bottom">
+        <p style="color: white;">© Copyright borgsuite.com 2016-2025. All Rights Reserved | Designed by Aditi Manchanda</p>
+        <ul class="foot-links">
+          <li><a href="#">Term of Use</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    // === Data Arrays ===
+    const courses = [
+      { title: "Web Developer Bootcamp 2024", duration: "62h", students: "15,340", price: "$84.99", oldPrice: "$119.99", badge: "Bestseller", img: "https://via.placeholder.com/600x300?text=Web+Dev" },
+      { title: "Python for Data Science & ML", duration: "56h", students: "23,100", price: "$94.99", img: "https://via.placeholder.com/600x300?text=Data+Science" },
+      { title: "Digital Marketing Masterclass", duration: "48h", students: "42,850", price: "$89.99", img: "https://via.placeholder.com/600x300?text=Marketing" },
+      { title: "Machine Learning A-Z", duration: "44h", students: "18,750", price: "$99.99", img: "https://via.placeholder.com/600x300?text=ML" }
+    ];
+
+    const testimonials = [
+      { name: "Aisha Chouhan", role: "Data Science Student", text: "The best learning experience I've ever had!" },
+      { name: "Swapnil Srivastava", role: "HR Analyst", text: "Helped me boost my career with practical skills." },
+      { name: "Priya Sharma", role: "UX Designer", text: "Excellent platform with comprehensive courses." }
+    ];
+
+    const steps = [
+      "Course Program","Expert Members","Project Prep","Assignments","Grooming","Interviews","Placed"
+    ];
+
+    // === Render Courses ===
+    const courseList = document.getElementById('course-list');
+    courses.forEach(c => {
+      courseList.innerHTML += `
+        <div class="col-md-6 col-lg-3">
+          <div class="card course-card h-100 position-relative">
+            <img src="${c.img}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">${c.title}</h5>
+              <p class="text-muted small">${c.duration} • ${c.students} students</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="price">${c.price}${c.oldPrice ? ' <small class="text-muted text-decoration-line-through">'+c.oldPrice+'</small>' : ''}</span>
+                <a class="btn btn-sm btn-primary" href="#">Enroll</a>
+              </div>
+            </div>
+            ${c.badge ? '<span class="badge bg-success position-absolute top-0 end-0 m-2">'+c.badge+'</span>' : ''}
+          </div>
+        </div>
+      `;
+    });
+
+    // === Render Testimonials ===
+    const testimonialList = document.getElementById('testimonial-list');
+    testimonials.forEach(t => {
+      testimonialList.innerHTML += `
+        <div class="col-md-4">
+          <div class="testimonial">
+            <h6>${t.name}</h6>
+            <p class="small text-muted">${t.role}</p>
+            <p>"${t.text}"</p>
+          </div>
+        </div>
+      `;
+    });
+
+    // === Render Steps ===
+    const stepList = document.getElementById('steps');
+    steps.forEach((s, i) => {
+      stepList.innerHTML += `
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="step-box">
+            <div class="step-number">${i+1}</div>
+            <h6 class="mb-0">${s}</h6>
+          </div>
+        </div>
+      `;
+    });
+
+    // === Contact Form ===
+     document.getElementById("profileForm").addEventListener("submit", function (e) {
+     e.preventDefault();
+ 
+     const name = document.getElementById("name").value.trim();
+     const email = document.getElementById("email").value.trim();
+     const phone = document.getElementById("phone").value.trim();
+     const bio = document.getElementById("bio").value.trim();
+     const msg = document.getElementById("formMessage");
+ 
+     // Validation
+     if (!name || !email || !phone || !bio) {
+       msg.textContent = "❌ All fields are required!";
+       msg.className = "mt-3 text-center text-sm font-medium text-red-600";
+       return;
+     }
+ 
+     const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+     if (!emailPattern.test(email)) {
+       msg.textContent = "❌ Enter a valid email address!";
+       msg.className = "mt-3 text-center text-sm font-medium text-red-600";
+       return;
+     }
+ 
+     const phonePattern = /^[0-9]{10}$/;
+     if (!phonePattern.test(phone)) {
+       msg.textContent = "❌ Phone number must be 10 digits!";
+       msg.className = "mt-3 text-center text-sm font-medium text-red-600";
+       return;
+     }
+ 
+     msg.textContent = "✅ Profile updated successfully!";
+     msg.className = "mt-3 text-center text-sm font-medium text-green-600";
+ 
+     // Reset form (optional)
+     document.getElementById("profileForm").reset();
+   });
+
+    //  ==== course ====
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+    const cards = document.querySelector('.cards');
+    
+    leftArrow.addEventListener('click', () => {
+      cards.scrollBy({ left: -260, behavior: 'smooth' });
+    });
+    
+    rightArrow.addEventListener('click', () => {
+      cards.scrollBy({ left: 260, behavior: 'smooth' });
+    });
+
+  </script>
+</body>
+</html>
